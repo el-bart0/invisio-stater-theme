@@ -17,11 +17,19 @@ $color-border: #e5e7eb;
 $color-selection: rgba(#0057b8, 0.18);
 
 // Typography
-$font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-sans:
+	system-ui,
+	-apple-system,
+	"Segoe UI",
+	Roboto,
+	Helvetica,
+	Arial,
+	sans-serif;
 $font-serif: Georgia, "Times New Roman", serif;
-$font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+$font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono",
+	monospace;
 
-$font-size-base: 1rem;
+$font-size-base: 1.6rem;
 $line-height-base: 1.6;
 
 // Spacing
@@ -32,9 +40,20 @@ $content-width: 800px;
 $wide-width: 1100px;
 
 // Breakpoints (consumed by mixins added in Bucket 4)
+// "sm"/"md"/"lg"/"xl" are relied on by layout/header + layout/navigation —
+// don't change their values without re-checking those breakpoints. "xs"/"xxl"/
+// "xxxl"/"ultra" extend the scale for the grid + side-padding mixins.
 $breakpoints: (
+	"xs": 386px,
 	"sm": 480px,
 	"md": 768px,
 	"lg": 1024px,
 	"xl": 1280px,
+	"xxl": 1390px,
+	"xxxl": 1600px,
+	"ultra": 1920px,
 );
+
+// Side padding (container/grid gutters) — tune per project.
+$side-padding: 1.5rem;
+$side-padding-percent: 4%;

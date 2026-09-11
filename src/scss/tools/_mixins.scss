@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// General-purpose helper mixins.
+// -----------------------------------------------------------------------------
+
+@use "sass:map";
+@use "../settings/variables" as *;
+@use "breakpoints" as *;
+
+@mixin side-padding {
+	padding-left: $side-padding;
+	padding-right: $side-padding;
+
+	@include respond-to("sm") {
+		padding-left: $side-padding-percent;
+		padding-right: $side-padding-percent;
+	}
+
+	@include respond-to("xxxl") {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@mixin list-style {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+@mixin margin-bottom-block {
+	margin-bottom: 2.2rem;
+
+	@include respond-to("lg") {
+		margin-bottom: 4.2rem;
+	}
+}

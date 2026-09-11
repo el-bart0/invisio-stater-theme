@@ -1,0 +1,69 @@
+// -----------------------------------------------------------------------------
+// Optional 12-column flex grid — opt-in utility classes, not used by the base
+// templates. Source: https://codepen.io/dgca/pen/QExbKN
+// -----------------------------------------------------------------------------
+
+@use "../settings/variables" as *;
+@use "../tools/breakpoints" as *;
+@use "../tools/mixins" as *;
+
+.row {
+	width: 100%;
+	max-width: $wide-width;
+	margin: 0 auto;
+
+	@include side-padding;
+}
+
+.flex-row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: stretch;
+	margin: 0 auto;
+
+	@include side-padding;
+
+	@include respond-to("lg") {
+		width: $wide-width;
+		max-width: 100%;
+	}
+
+	&.flip {
+		flex-direction: row-reverse;
+	}
+}
+
+.flex-row--align-v-center {
+	align-items: center;
+}
+
+.flex-row--align-v-bottom {
+	align-items: flex-end;
+}
+
+.flex-row--align-h-center {
+	justify-content: center;
+}
+
+.flex-row--align-h-right {
+	justify-content: flex-end;
+}
+
+.flex-row--reverse {
+	flex-direction: row-reverse;
+}
+
+@each $name in "xs", "sm", "md", "lg", "xl" {
+
+	@for $i from 1 through 12 {
+		.flex-col-#{$name}-#{$i} {
+			box-sizing: border-box;
+			width: 100%;
+
+			@include respond-to($name) {
+				flex: 0 0 calc(100% * (#{$i} / 12));
+				max-width: calc(100% * (#{$i} / 12));
+			}
+		}
+	}
+}
