@@ -1,0 +1,15 @@
+# Normalise line endings.
+* text=auto eol=lf
+
+# Committed build output — treat as generated so it collapses in diffs/PRs.
+build/** linguist-generated
+build/** -diff
+
+# Binary assets.
+*.png binary
+*.jpg binary
+*.gif binary
+
+# Translation templates are text.
+*.pot text
+*.po  text

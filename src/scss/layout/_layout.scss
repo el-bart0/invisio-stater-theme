@@ -1,0 +1,47 @@
+// -----------------------------------------------------------------------------
+// Layout: content measure and WordPress alignment classes.
+// -----------------------------------------------------------------------------
+
+@use "../settings/variables" as *;
+
+.site-main,
+.page-header,
+.comments-area,
+.post-navigation,
+.posts-navigation {
+	max-width: $wide-width;
+	margin-inline: auto;
+	padding-inline: $spacing-unit;
+}
+
+// Constrain the reading measure of flowing content, but let aligned children
+// opt out.
+.entry-content > *,
+.entry-summary > * {
+	max-width: $content-width;
+	margin-inline: auto;
+}
+
+.entry-content > .alignwide {
+	max-width: $wide-width;
+}
+
+.entry-content > .alignfull {
+	max-width: none;
+	margin-inline: calc(50% - 50vw);
+}
+
+.aligncenter {
+	display: block;
+	margin-inline: auto;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 $spacing-unit $spacing-unit 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 $spacing-unit $spacing-unit;
+}

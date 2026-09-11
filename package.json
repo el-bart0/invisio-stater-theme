@@ -1,0 +1,25 @@
+{
+	"name": "invisio",
+	"version": "0.1.0",
+	"description": "Invisio starter theme — modern classic-PHP base with ACF blocks.",
+	"private": true,
+	"license": "GPL-2.0-or-later",
+	"engines": {
+		"node": ">=22"
+	},
+	"scripts": {
+		"start": "concurrently -k -n build,sync -c blue,green \"wp-scripts start\" \"browser-sync start --config bs-config.js\"",
+		"build": "wp-scripts build",
+		"lint-js": "wp-scripts lint-js",
+		"lint-style": "wp-scripts lint-style",
+		"format": "wp-scripts format",
+		"make-pot": "node bin/makepot.mjs",
+		"rename": "node bin/rename.mjs"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^34.2.0",
+		"browser-sync": "^3.0.4",
+		"concurrently": "^10.0.5",
+		"wp-pot": "^1.10.2"
+	}
+}

@@ -1,0 +1,43 @@
+// -----------------------------------------------------------------------------
+// Site header / footer — minimal layout only.
+// -----------------------------------------------------------------------------
+
+@use "../settings/variables" as *;
+@use "../tools/breakpoints" as *;
+
+.site-header {
+	max-width: $wide-width;
+	margin-inline: auto;
+	padding: $spacing-unit;
+
+	@include respond-to("md") {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: $spacing-unit;
+	}
+}
+
+.site-title {
+	margin: 0;
+	font-size: 1.25rem;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.site-description {
+	margin: 0;
+	color: $color-muted;
+	font-size: 0.875rem;
+}
+
+.site-footer {
+	max-width: $wide-width;
+	margin-inline: auto;
+	padding: ($spacing-unit * 2) $spacing-unit;
+	color: $color-muted;
+	font-size: 0.875rem;
+}

@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// Invisio — main front-end stylesheet.
+// -----------------------------------------------------------------------------
+// A deliberately minimal baseline: reset, readable typography, form + media
+// consistency, layout measure and alignment classes, navigation, print. No
+// design system — projects layer their own visual language on top.
+// -----------------------------------------------------------------------------
+
+@use "base/reset";
+@use "base/typography";
+@use "base/elements";
+@use "base/forms";
+@use "layout/layout";
+@use "layout/header";
+@use "layout/navigation";
+@use "components/media";
+@use "print";

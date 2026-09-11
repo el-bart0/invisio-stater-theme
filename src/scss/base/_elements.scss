@@ -1,0 +1,59 @@
+// -----------------------------------------------------------------------------
+// Base element styling.
+// -----------------------------------------------------------------------------
+
+@use "../settings/variables" as *;
+
+a {
+	color: $color-primary;
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+
+	&:hover,
+	&:focus {
+		color: $color-primary-dark;
+	}
+}
+
+::selection {
+	background-color: $color-selection;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid $color-border;
+	margin: ($spacing-unit * 2) 0;
+}
+
+:focus-visible {
+	outline: 2px solid $color-primary;
+	outline-offset: 2px;
+}
+
+// Accessible visually-hidden helper (used by the skip link in header.php).
+.screen-reader-text {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+
+	&:focus {
+		position: fixed !important;
+		top: $spacing-unit;
+		left: $spacing-unit;
+		z-index: 100000;
+		width: auto;
+		height: auto;
+		padding: 0.75em 1em;
+		clip: auto;
+		white-space: normal;
+		background-color: $color-background;
+		color: $color-text;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	}
+}

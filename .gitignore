@@ -1,0 +1,15 @@
+# Dependencies
+/node_modules/
+/vendor/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+
+# Local environment override
+.env
+
+# NOTE: /build/ is intentionally committed so a copied theme runs with no build step.

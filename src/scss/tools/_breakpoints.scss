@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// respond-to() — min-width media queries keyed to the $breakpoints map.
+// -----------------------------------------------------------------------------
+
+@use "sass:map";
+@use "../settings/variables" as *;
+
+@mixin respond-to($name) {
+
+	@if map.has-key($breakpoints, $name) {
+
+		@media (min-width: map.get($breakpoints, $name)) {
+			@content;
+		}
+	} @else {
+
+		@error "Unknown breakpoint `#{$name}`. Add it to $breakpoints.";
+	}
+}

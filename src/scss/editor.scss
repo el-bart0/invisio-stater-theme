@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// Invisio — block editor styles.
+// -----------------------------------------------------------------------------
+// Loaded via add_editor_style(). Keeps editor typography and content measure in
+// step with the front end. Visual design is per-project.
+// -----------------------------------------------------------------------------
+
+@use "settings/variables" as *;
+
+.editor-styles-wrapper {
+	font-family: $font-sans;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	color: $color-text;
+	background-color: $color-background;
+}
+
+.editor-styles-wrapper .wp-block {
+	max-width: $content-width;
+}
+
+.editor-styles-wrapper .wp-block[data-align="wide"] {
+	max-width: $wide-width;
+}
+
+.editor-styles-wrapper .wp-block[data-align="full"] {
+	max-width: none;
+}

@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "acf/invisio-hero",
+	"title": "Hero",
+	"description": "A headline, supporting text and a call to action, with an optional background image.",
+	"category": "invisio",
+	"icon": "cover-image",
+	"keywords": [ "hero", "banner", "cta", "header" ],
+	"supports": {
+		"align": [ "wide", "full" ],
+		"anchor": true,
+		"spacing": {
+			"padding": true,
+			"margin": [ "top", "bottom" ]
+		}
+	},
+	"acf": {
+		"mode": "preview",
+		"renderTemplate": "render.php"
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// Print — hide chrome, drop backgrounds, expose link targets.
+// -----------------------------------------------------------------------------
+
+@media print {
+
+	.skip-link,
+	.main-navigation,
+	.menu-toggle,
+	.site-footer,
+	.post-navigation,
+	.posts-navigation,
+	#comments,
+	#secondary {
+		display: none;
+	}
+
+	body {
+		color: #000;
+		background: #fff;
+	}
+
+	a[href^="http"]::after {
+		content: " (" attr(href) ")";
+		font-size: 0.85em;
+		word-break: break-all;
+	}
+}

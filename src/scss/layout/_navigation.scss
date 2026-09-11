@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------------------
+// Primary navigation — structure, behaviour, minimal visual.
+// -----------------------------------------------------------------------------
+
+@use "../settings/variables" as *;
+@use "../tools/breakpoints" as *;
+
+.main-navigation {
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		position: relative;
+	}
+
+	a {
+		display: block;
+		padding: 0.5em 0;
+		text-decoration: none;
+	}
+
+	// Mobile: menu hidden until toggled.
+	> ul {
+		display: none;
+	}
+
+	&.is-toggled > ul {
+		display: block;
+		padding: $spacing-unit 0;
+		border-top: 1px solid $color-border;
+	}
+
+	[aria-current] {
+		font-weight: 700;
+	}
+}
+
+.menu-toggle {
+	display: inline-block;
+	padding: 0.5em 0.75em;
+	border: 1px solid $color-border;
+	background: transparent;
+	cursor: pointer;
+}
+
+@include respond-to("md") {
+
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation > ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $spacing-unit;
+		border: 0;
+		padding: 0;
+	}
+
+	.main-navigation ul ul {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 10;
+		display: none;
+		min-width: 12em;
+		padding: 0 $spacing-unit;
+		background-color: $color-background;
+		border: 1px solid $color-border;
+	}
+
+	.main-navigation li:hover > ul,
+	.main-navigation li.focus > ul {
+		display: block;
+	}
+}

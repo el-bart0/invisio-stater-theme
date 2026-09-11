@@ -1,0 +1,45 @@
+// -----------------------------------------------------------------------------
+// Media — figures, captions and classic [gallery] output.
+// -----------------------------------------------------------------------------
+
+@use "../settings/variables" as *;
+
+figure {
+	margin-block: $spacing-unit;
+}
+
+figcaption,
+.wp-caption-text,
+.wp-element-caption {
+	margin-top: calc(#{$spacing-unit} / 2);
+	color: $color-muted;
+	font-size: 0.875rem;
+	text-align: center;
+}
+
+.wp-caption {
+	max-width: 100%;
+}
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: $spacing-unit;
+	margin-block: $spacing-unit;
+}
+
+.gallery-columns-1 {
+	grid-template-columns: 1fr;
+}
+
+.gallery-columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-item {
+	margin: 0;
+}

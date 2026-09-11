@@ -1,0 +1,42 @@
+// -----------------------------------------------------------------------------
+// Form controls — minimal consistency for search + comment forms.
+// -----------------------------------------------------------------------------
+
+@use "../settings/variables" as *;
+
+input,
+textarea,
+select {
+	max-width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+textarea {
+	width: 100%;
+	padding: 0.5em 0.65em;
+	background-color: $color-background;
+	border: 1px solid $color-border;
+	border-radius: 3px;
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+	padding: 0.55em 1.1em;
+	background: transparent;
+	border: 1px solid currentColor;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+label {
+	display: inline-block;
+	margin-bottom: 0.35em;
+}
