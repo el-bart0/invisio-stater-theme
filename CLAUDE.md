@@ -56,6 +56,17 @@ enqueues from `build/`, never from `src/`. `inc/enqueue.php` /
 `inc/helpers.php` degrade gracefully (skip enqueuing) if `build/` doesn't
 exist yet, so the theme won't fatal before a first build.
 
+### CSS minification is explicit, not a wp-scripts default
+
+`@wordpress/scripts`' default webpack config only lists `TerserPlugin` (JS) in
+`optimization.minimizer` — it does not minify extracted CSS. `webpack.config.js`
+appends `css-minimizer-webpack-plugin` to that array so `build/*.css` ships
+minified from `npm run build`. It only runs in production mode (tied to
+`optimization.minimize`), so `npm start`'s dev/watch build is unaffected. If
+you ever replace or reset `optimization.minimizer` in `webpack.config.js`,
+make sure to keep both entries — providing a custom array replaces webpack's
+defaults entirely rather than merging with them.
+
 ### PHP loading (no Composer, no autoloader)
 
 `functions.php` requires a fixed, ordered list of files under `inc/` — see the

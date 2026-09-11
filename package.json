@@ -20,6 +20,7 @@
 		"@wordpress/scripts": "^34.2.0",
 		"browser-sync": "^3.0.4",
 		"concurrently": "^10.0.5",
+		"css-minimizer-webpack-plugin": "^8.0.0",
 		"wp-pot": "^1.10.2"
 	}
 }
