@@ -97,7 +97,7 @@ fataling.
 `render.php` files would never reach `build/`.
 
 Field groups are **acf-json only** — there is no `fields.php` convention here.
-Build a field group in the admin with a location rule of *Block is equal to*
+Build a field group in the admin with a location rule of _Block is equal to_
 your block; ACF auto-saves it to `acf-json/`, which is committed. The load and
 save points are both wired to `acf-json/` in `inc/blocks.php`
 (`acf/settings/load_json` / `acf/settings/save_json`).
@@ -109,6 +109,7 @@ save points are both wired to `acf-json/` in `inc/blocks.php`
 ### Block editor lockdown
 
 Invisio intentionally does not use core blocks for content. `inc/editor.php`:
+
 - Restricts the inserter to `acf/invisio-*` blocks only, via
   `allowed_block_types_all` — but only when at least one Invisio block is
   actually registered; otherwise it falls back to allowing everything, so the
@@ -151,19 +152,26 @@ mixin from elsewhere declares its own `@use "../path" as *;`):
 
   ```html
   <!-- Single column, centered, narrower than full row width -->
-  <main class="site-main flex-row flex-row--align-h-center">
+  <section>
+    <div class="site-main flex-row flex-row--align-h-center">
       <div class="flex-col-lg-6">Narrower content, center aligned</div>
-  </main>
+    </div>
+  </section>
 
   <!-- Two columns side by side (from the lg breakpoint up) -->
-  <main class="site-main flex-row">
+  <section>
+    <div class="site-main flex-row">
       <div class="flex-col-lg-6">Side by side content</div>
       <div class="flex-col-lg-6">Side by side content</div>
-  </main>
+    </div>
+  </section>
 
   <!-- Full page-width content, no columns -->
-  <main class="site-main row">Page-width content</main>
+  <section>
+    <div class="site-main row">Page-width content</div>
+  </section>
   ```
+
 - `layout/_header.scss`, `layout/_navigation.scss` — site chrome; the nav
   toggle behavior lives in `src/js/navigation.js` (outside-click and
   resize-to-desktop close, no dependencies).
